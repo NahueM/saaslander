@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "Lanza más rápido con TurboSaaS",
+    "subtitle": "Todo lo que necesitas para validar, crear y hacer crecer tu SaaS en días, no meses."
+  },
+  "nav": {
+    "features": "Características",
+    "pricing": "Precios",
+    "docs": "Documentación"
+  },
+  "cta": {
+    "getStarted": "Comenzar",
+    "documentation": "Documentación"
+  }
+}

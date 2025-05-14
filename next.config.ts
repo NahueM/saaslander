@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import { NextConfig } from "next";
+import withMDX from "@next/mdx";
+import createNextIntlPlugin from "next-intl/plugin";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const mdxOptions = {
+  extension: /\.mdx?$/,
 };
 
-export default nextConfig;
+const nextConfig: NextConfig = {
+  // Para que Next.js reconozca páginas .mdx
+  pageExtensions: ["ts", "tsx", "mdx"],
+  // @ts-expect-error is experimental
+  experimental: { appDir: true },
+};
+
+export default createNextIntlPlugin()(withMDX(mdxOptions)(nextConfig));
