@@ -7,7 +7,6 @@
 [![TypeScript 5](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://typescriptlang.org)
 [![Commercial License](https://img.shields.io/badge/license-Pro--Commercial-orange)](LICENSE-PRO.md)
 
-
 [Live demo →]() &nbsp;&nbsp;|&nbsp;&nbsp;[Buy commercial license on Gumroad →]()
 
 ---
@@ -15,14 +14,12 @@
 ## ✨ Features
 
 - **Next.js 14 App Router** – file-system routing, layouts & server components.
-- **Tailwind CSS 3.5** with custom theme tokens, dark-mode toggle & plugins (`@tailwindcss/typography`, `forms`).
+- **Tailwind CSS 4** with custom theme tokens, dark-mode toggle & plugins (`@tailwindcss/typography`, `forms`).
 - **TypeScript**, ESLint, Prettier & Stylelint pre-configured.
 - **Framer Motion** page-transition presets.
 - **i18n-ready** with `next-intl` (example `en/` & `es/`).
 - **MDX-powered blog & docs** (Notion-style typography).
 - **Reusable UI kit** (buttons, badges, cards) + ready-made landing sections (Hero, Features, Pricing, FAQs, Testimonials, CTA).
-- **SEO & a11y**: `next-seo`, sitemap, open graph, Lighthouse ≥ 95.
-- **Unit (Vitest) & e2e (Cypress) tests** + GitHub Actions CI (lint → test → build).
 - **One-click deploy** to Vercel.
 
 Not included yet: automated tests, next-seo, Stripe demo, or CI workflows. They will arrive in later milestones.
@@ -47,6 +44,7 @@ npm run dev
 ---
 
 ## 📂 Project Structure
+
 ```
 saaslander/
 ├─ public/              # Static assets & OG images
@@ -67,7 +65,7 @@ saaslander/
 ## 🔧 Configuration
 
 | File                 | Purpose                                              |
-|----------------------|------------------------------------------------------|
+| -------------------- | ---------------------------------------------------- |
 | `tailwind.config.ts` | Brand colors, typography, breakpoints                |
 | `next.config.ts`     | Internationalization, remote images, runtime options |
 | `.prettierrc.json`   | Consistent format.                                   |
@@ -78,34 +76,37 @@ saaslander/
 
 ## 🚀NPM  Scripts
 
-| Command  | Description                       |
-|----------|-----------------------------------|
-| `dev`    | Start development server          |
-| `build`  | Build for production              |
-| `start`  | Serve the production build        |
-| `lint`   | Run ESLint + Prettier + Stylelint |
-| `format` | Prettier format                   |
-| `prepare`| Hook Husky git commit / push      |
+| Command   | Description                       |
+| --------- | --------------------------------- |
+| `dev`     | Start development server          |
+| `build`   | Build for production              |
+| `start`   | Serve the production build        |
+| `lint`    | Run ESLint + Prettier + Stylelint |
+| `format`  | Prettier format                   |
+| `prepare` | Hook Husky git commit / push      |
 
 ---
 
 ## 🎨 Customize in Minutes
+
 1. Colors → tailwind.config.ts > theme.extend.colors
 
-2. Fonts  → update the font import in src/app/layout.tsx
+2. Fonts → update the font import in src/app/layout.tsx
 
-3. Copy   → edit strings in messages/{lang}.json
+3. Copy → edit strings in messages/{lang}.json
 
 4. Sections → duplicate or modify components in src/components/
 
 ---
 
-## 🛠️  Support
+## 🛠️ Support
+
 This is a private, paid template. If you run into issues or have questions, email support@saaslander.io (response within 48 h).
 
 ---
 
 ## 📜 License
+
 This template is distributed under a Proprietary Commercial License. Each purchase grants you a non‑exclusive, non‑transferable license to use SaaSlander in one personal or commercial project. Republishing, sublicensing, or reselling any part of the source code is strictly prohibited.
 
 See [`LICENSE-PRO.md`](./LICENSE-PRO.md) for the full terms.

@@ -2,25 +2,20 @@
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import { loadStripe } from "@stripe/stripe-js";
+import { useTranslations } from "next-intl";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
 );
 
-const plans = {
-  month: [
-    { name: "Basic", price: 29 },
-    { name: "Pro", price: 59 },
-    { name: "Enterprise", price: 129 },
-  ],
-  year: [
-    { name: "Basic", price: 290 },
-    { name: "Pro", price: 590 },
-    { name: "Enterprise", price: 1290 },
-  ],
+const plans = ["basic", "pro", "enterprise"];
+const planPrices = {
+  month: [29, 59, 129],
+  year: [290, 590, 1290],
 };
 
 export default function PricingTiers() {
+  const t = useTranslations("pricing");
   const [annual, setAnnual] = useState(false);
   const period = annual ? "year" : "month";
 
@@ -39,8 +34,9 @@ export default function PricingTiers() {
     <section id="pricing" className="bg-background text-foreground py-24">
       <div className="mx-auto max-w-4xl px-4 text-center">
         <h2 className="text-3xl font-extrabold">
-          {annual ? "Premium Anual" : "Pago Mensual"}
+          {annual ? t("title.yearly") : t("title.monthly")}
         </h2>
+
         <div className="mt-6 flex justify-center">
           <Switch
             checked={annual}
@@ -56,23 +52,25 @@ export default function PricingTiers() {
         </div>
 
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {plans[period].map((plan) => (
+          {plans.map((key, i) => (
             <div
-              key={plan.name}
+              key={key}
               className="flex flex-col rounded-lg border border-border bg-muted p-6 shadow-sm transition hover:shadow-md"
             >
-              <h3 className="text-xl font-semibold mb-4">{plan.name}</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                {t(`plans.${key}`)}
+              </h3>
               <p className="text-4xl font-extrabold">
-                {`€${plan.price}`}
+                €{planPrices[period][i]}
                 <span className="text-lg font-medium">
-                  /{annual ? "año" : "mes"}
+                  /{t(`unit.${period}`)}
                 </span>
               </p>
               <button
-                onClick={() => handleCheckout(plan.price)}
+                onClick={() => handleCheckout(planPrices[period][i])}
                 className="mt-6 rounded-lg bg-primary px-5 py-3 font-semibold text-background transition hover:bg-primary/90 dark:hover:bg-primary/80"
               >
-                Suscribirse
+                {t("subscribe")}
               </button>
             </div>
           ))}

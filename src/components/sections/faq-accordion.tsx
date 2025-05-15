@@ -1,24 +1,18 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import { Plus, Minus } from "lucide-react";
-
-const faqs = [
-  {
-    q: "¿Cómo puedo empezar?",
-    a: "Solo regístrate, elige tu plan y empieza a usar la plantilla.",
-  },
-  {
-    q: "¿Es compatible con idiomas?",
-    a: "Sí, tiene i18n integrado en Next.js con next-intl.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function FAQAccordion() {
+  const t = useTranslations("faq");
+
+  const faqs = t.raw("items") as { q: string; a: string }[];
+
   return (
     <section id="faq" className="bg-background text-foreground py-24">
       <div className="mx-auto max-w-4xl px-4">
         <h2 className="mb-8 text-2xl font-extrabold text-center">
-          Preguntas Frecuentes
+          {t("title")}
         </h2>
         <div className="space-y-4">
           {faqs.map((item, idx) => (

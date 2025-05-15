@@ -1,15 +1,61 @@
 {
   "hero": {
     "title": "Launch faster with TurboSaaS",
-    "subtitle": "Everything you need to validate, build and grow your SaaS in days, not months."
+    "subtitle": "Everything you need to validate, build and grow your SaaS in days, not months.",
+    "getStarted": "Get started",
+    "documentation": "Documentation"
+  },
+
+  "features": {
+    "instantPayments": {
+      "title": "Instant Payments",
+      "desc": "Integrate Stripe in minutes and start charging customers."
+    },
+    "multiLanguage": {
+      "title": "Multi‑language",
+      "desc": "Reach global audiences with built‑in i18n support."
+    },
+    "seoPerformance": {
+      "title": "SEO & Performance",
+      "desc": "Lighthouse 100/100 out of the box on mobile."
+    },
+    "notionDocs": {
+      "title": "Notion‑style Docs",
+      "desc": "Host your documentation inside the same codebase."
+    }
   },
   "nav": {
     "features": "Features",
     "pricing": "Pricing",
     "docs": "Docs"
   },
-  "cta": {
-    "getStarted": "Get started",
-    "documentation": "Documentation"
+  "pricing": {
+    "title": {
+      "monthly": "Monthly Payment",
+      "yearly": "Annual Premium"
+    },
+    "unit": {
+      "month": "month",
+      "year": "year"
+    },
+    "plans": {
+      "basic": "Basic",
+      "pro": "Pro",
+      "enterprise": "Enterprise"
+    },
+    "subscribe": "Subscribe"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "How can I get started?",
+        "a": "Just sign up, choose your plan, and start using the template."
+      },
+      {
+        "q": "Is it language compatible?",
+        "a": "Yes, it includes i18n integration with Next.js and next-intl."
+      }
+    ]
   }
 }

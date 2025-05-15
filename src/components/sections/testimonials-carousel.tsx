@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -14,11 +14,20 @@ const testimonials = [
     role: "CTO at BetaTech",
     text: "La integración de Stripe y la documentación in-app son simplemente fantásticas.",
   },
-  // añade más testimonios según necesites
 ];
 
 export default function TestimonialsCarousel() {
   const [index, setIndex] = useState(0);
+
+  // Avanza automáticamente cada 5 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((current) => (current + 1) % testimonials.length);
+    }, 5000); // 5000ms = 5 segundos
+
+    return () => clearInterval(interval);
+  }, []);
+
   const next = () => setIndex((index + 1) % testimonials.length);
   const prev = () =>
     setIndex((index - 1 + testimonials.length) % testimonials.length);

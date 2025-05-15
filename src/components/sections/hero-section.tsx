@@ -20,16 +20,11 @@ export default function HeroSection() {
         viewport={{ once: true }}
         className="max-w-4xl text-4xl font-extrabold tracking-tight sm:text-6xl"
       >
-        {t("hero.title", {
-          default: "Launch faster with TurboSaaS",
-        })}
+        {t("hero.title")}
       </motion.h1>
 
       <p className="mt-6 max-w-2xl text-lg text-foreground/70 dark:text-foreground/50 sm:text-xl">
-        {t("hero.subtitle", {
-          default:
-            "Everything you need to validate, build and grow your SaaS in days, not months.",
-        })}
+        {t("hero.subtitle")}
       </p>
 
       <div className="mt-8 flex gap-4">
@@ -37,13 +32,13 @@ export default function HeroSection() {
           href="#pricing"
           className="rounded-lg bg-primary px-6 py-3 font-semibold text-background transition hover:bg-primary/90 dark:hover:bg-primary/80"
         >
-          {t("cta.getStarted", { default: "Get started" })}
+          {t("hero.getStarted")}
         </a>
         <Link
           href="/docs"
           className="rounded-lg border border-border px-6 py-3 font-semibold text-foreground transition hover:bg-muted dark:border-border/70 dark:hover:bg-muted/90"
         >
-          {t("cta.documentation", { default: "Documentation" })}
+          {t("hero.documentation")}
         </Link>
       </div>
     </section>
